@@ -1,6 +1,0 @@
-#!/usr/bin/env bash
-#script extends previous exercise and displays line containing the bash word.
-# You cannot use pgrep
-# shellcheck disable=SC2009
-
-./1-list_your_processes | grep "bash"
