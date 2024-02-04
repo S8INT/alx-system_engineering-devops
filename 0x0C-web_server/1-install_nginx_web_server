@@ -9,9 +9,8 @@ apt install -y nginx
 # Create the HTML file with "Hello World!" content
 echo "Hello World!" > /var/www/html/index.html
 
-# Restart Nginx without using systemctl
-nginx -s stop
-nginx
+# start server
+service nginx start
 
 # Ensure Nginx is listening on port 80
 netstat -tulpn | grep nginx
