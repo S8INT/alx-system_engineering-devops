@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+# Install and configure Nginx to serve a "Hello World!" page on port 80
+
 # Update package lists
 apt update
 
@@ -9,11 +11,12 @@ apt install -y nginx
 # Create the HTML file with "Hello World!" content
 echo "Hello World!" > /var/www/html/index.html
 
-# start server
-service nginx start
+# Restart Nginx without using systemctl
+nginx -s stop
+nginx
 
 # Ensure Nginx is listening on port 80
 netstat -tulpn | grep nginx
 
 # Test the server using curl
-curl -I http://localhost/
+curl -I http://3.84.158.186/

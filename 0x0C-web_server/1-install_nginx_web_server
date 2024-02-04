@@ -8,6 +8,8 @@ apt update
 # Install Nginx
 apt install -y nginx
 
+ufw allow 'Nginx HTTP'
+
 # Create the HTML file with "Hello World!" content
 echo "Hello World!" > /var/www/html/index.html
 
