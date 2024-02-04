@@ -1,24 +1,8 @@
 #!/usr/bin/env bash
+# installs nginx and configures it on a remote server
 
-# Install and configure Nginx to serve a "Hello World!" page on port 80
-
-# Update package lists
-apt update
-
-# Install Nginx
-apt install -y nginx
-
+apt-get -y update
+apt-get -y install nginx
 ufw allow 'Nginx HTTP'
-
-# Create the HTML file with "Hello World!" content
-echo "Hello World!" > /var/www/html/index.html
-
-# Restart Nginx without using systemctl
-nginx -s stop
-nginx
-
-# Ensure Nginx is listening on port 80
-netstat -tulpn | grep nginx
-
-# Test the server using curl
-curl -I http://3.84.158.186/
+echo 'Hello World!' > /var/www/html/index.html
+service nginx start
